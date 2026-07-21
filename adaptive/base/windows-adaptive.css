@@ -1568,6 +1568,8 @@ background: none!important;}
 [class*="_stickyHeader"]{backdrop-filter: none!important;}
 .rl-wbw-line.rl-wbw-line-active{padding-left: .2em!important;}
 /*radiantlyrics*/
+[data-test=now-playing-lyrics] div.rl-wbw-active:not(.rl-wbw-word){ margin-left: 0px!important;}
+	  
 div > div._marketText_1lyag_1._display10_1lyag_39._text_4a89397._hasCues_15d8b83 > div > div > span:hover,div._marketText_1lyag_1._display10_1lyag_39._text_4a89397._hasCues_15d8b83 > div > div> span.rl-wbw-word.rl-wbw-word-hover{
     color:  color-mix(in srgb, rgb(var(--lyrtxt), .875) 70% , #ffffff70 30%)  !Important;
     text-shadow: 0 0 var(--rl-glow-inner, 2px) rgb(var(--lyrtxt), .275), 0 0 var(--rl-glow-outer, 20px) rgb(var(--cover-Vibrant), .275) !important;}
