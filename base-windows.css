@@ -4,29 +4,6 @@
  "description": "colorful light theme for tidaluna"
  "license": "MIT License"
  * } */
- /* =========================================================
-   footer patch
-   ========================================================= */
-
-[class="has-footer-player"],[class="has-footer-player is-now-playing"],[class="has-footer-player is-fullscreen is-now-playing"]{
-._player_8c80ae6.nowPlayingVisible{ width: 98.2vw !important;border-width: 1.5px!important;
-border-color: color-mix(in srgb, rgba(255, 255, 255, 0.25) 30% , rgb(var(--cover-LVib1), .2) 70%)!important;}
-
-._player_8c80ae6:before,._player_8c80ae6.nowPlayingVisible ._veil_9a0b2e0{display: none;}
-
-._player_8c80ae6:after{ background: #0000; backdrop-filter: none; box-shadow: none;}
-
-._player_8c80ae6{width: 98vw!important; margin-bottom: 0px!important; margin-left: auto!important; margin-right: auto!important; border-color: color-mix(in srgb, rgba(255, 255, 255, 0.3) 50% , rgb(var(--cover-F00T), .4) 50%)!important; border-width: 1.5px!important;}
-
-[data-test=footer-player]{bottom: 12px!important; border-radius: 1em!important;}
-  /*recommended songs patch*/
-._title_65c055b{color: color-mix(in srgb, rgb(var(--cover-LVib1), .6) 50%, white 50%) !important;}
-[class="_container_8dd53e2"]{
-a,._titleText_51cccae,time{color: color-mix(in srgb, rgb(var(--cover-LVib1), .6) 50%, white 50%) !important;;}
-._icon_77f3f89{fill: color-mix(in srgb, rgb(var(--cover-LVib1), .6) 50%, white 50%) !important;;}}}
- /*search bar shadow patch*/
-:is(._container_cb5cbe4 ._searchFieldWithPopover_267e090) .searchFieldWithinSearchFieldWithPopover{
-    box-shadow: 0px 4px 1.5em color-mix(in srgb, rgb(var(--cover-Vib1),.3) 90%, rgba(0, 0, 0, 0.3) 10%);}
 
 
 /* ==========================================.............................................
@@ -67,6 +44,28 @@ a,._titleText_51cccae,time{color: color-mix(in srgb, rgb(var(--cover-LVib1), .6)
 /* =========================================================
    WINDOWS TYPE SHIT
    ========================================================= */
+     /* =========================================================
+   footer patch
+   ========================================================= */
+._header_3fe665f:before{
+    display: none;
+}
+[class="has-footer-player is-desktop-app is-now-playing"],[class="has-footer-player is-desktop-app"],[class="has-footer-player is-desktop-app is-fullscreen is-now-playing"]{
+._player_8c80ae6.nowPlayingVisible{ width: 98.1vw !important;border-width: 1.5px!important;
+border-color: color-mix(in srgb, rgba(255, 255, 255, 0.25) 30% , rgb(var(--cover-LVib1), .2) 70%)!important;}
+
+._player_8c80ae6:before,._player_8c80ae6.nowPlayingVisible ._veil_9a0b2e0{display: none;}
+
+._player_8c80ae6:after{ background: #0000; backdrop-filter: none; box-shadow: none;}
+
+._player_8c80ae6{width: 98vw!important; margin-bottom: 0px!important; margin-left: auto!important; margin-right: auto!important; border-color: color-mix(in srgb, rgba(255, 255, 255, 0.3) 50% , rgb(var(--cover-F00T), .4) 50%)!important; border-width: 1.5px!important;}
+
+[data-test=footer-player]{bottom: 12px!important; border-radius: 1em!important;}}
+
+
+._solidColor_d318bad,._wrapper_27ba76d._solidColor_a4abb93 ._dataContainer_5bb6028:before,
+._solidColor_052313f{background: #0000!Important;}
+
    :is(._coverArtContainer_2eafdf9 ._coverArt_79d862c) video {display: none;}
    /*search results height*/
 [class="_container_79ca9c5"]{ height: calc(100vh - (var(--miniPlayerHeight)*2.4 ))!Important;}
