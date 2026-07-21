@@ -1,0 +1,117 @@
+/* ==========================================.............................................
+    BUILTINTHEME
+-----------------------------------------------======================================== */
+/* ===========================----COLOR VARIABLES----================================== */
+    :root{
+
+        --cover-Vib1:      157, 145, 136 ; /* first vibrant color*/
+        --cover-DVib1:     41, 36, 32   ; /* darker version of first vibrant color*/
+        --cover-LVib1:     192, 185, 179 ; /* lighter version of first vibrant color*/
+
+        --lyrtxt: 255, 240, 211; /*lyrics text color, cut w/ white so make this color a lil more saturated than the actual color you want*/
+
+        --cover-Vib2:      207, 188, 166 ; /* second vibrant color (can be the same as the first if you're going for a monochromatic dealy)*/
+        --cover-DVib2:     41, 36, 32    ; /* darker version of second vibrant color*/
+        --cover-LVib2:     218, 207, 95  ; /* lighter version of second vibrant color*/
+
+        --card:      16, 4, 55 ; /* color of cards and some buttons, should match background color but contrast just enough to be visible*/
+        --card2:     19, 5, 65 ; /* slightly lighter and/or more saturated version of base card color*/
+
+        --cover-Mut1:      120, 120, 120 ; /* muted color (these barely show up they're kind of a holdover from when this was a covertheme compatible theme)*/
+        --cover-DMut1:     32, 12, 69      ; /* darker version of muted color*/
+        --cover-LMut1:     239, 188, 236 ; /* light version of muted color*/
+
+        --cover-F00T:      186, 177, 170 ; /*footer color (not now-playing)*/
+        --cover-F00TBAR1:  43, 40, 37    ; /*footer progress bar color (not now-playing)*/
+        --cover-F00TD:     74, 66, 58    ; /*should be a darker version of F00T color*/
+        /*bhdf doesnt do nuthin it's just here to make color picking easier*/
+        --bhdf:    rgb(171, 160, 152);
+
+        --carddelay: -240ms; /*controls delay for the hover animation for the album/playlist cards, what looks "right" weirdly depends on the colors you're using. usually somewhere between -200ms and -300ms*/
+
+        --cover-S1D3B4R:     color-mix(in srgb, rgba(255, 255, 255, 0.513) 43% , rgb(var(--cover-Vib1), 1) 57%); /*controls sidebar background-color*/
+
+        --sephue: 3deg;   /*controls sidebar album colorization & artist page top picture colorization, adjust to the color you want*/
+
+        --plylstsat: 1.2; /*controls backdrop-filter for most inner containers, such as the album or playlist tracklist*/
+        --plylstbrt: 1.2;
+        --plylstbrdr: color-mix(in srgb, color-mix(in srgb, rgb(var(--cover-Vib1), .5) 50% , rgba(255, 255, 255, .3)  50%)62% , rgb(var(--cover-LVib1),.8)  38%); /*controls border-color for most inner containers, such as the album or playlist tracklist*/
+
+        --feedsat: 1.2; /*controls backdrop-filter for home feed inner container*/
+        --feedbrt: 1.1;
+        --feedbrdr: color-mix(in srgb, color-mix(in srgb, rgb(var(--cover-Vib1), .5) 50% , rgba(255, 255, 255, .2)  50%)62% , rgb(var(--cover-LVib1),.6)  38%); /*controls border-color for home feed inner container*/
+
+        /*selected track colors*/
+        --tracksel1: color-mix(in srgb,color-mix(in srgb, rgb(var(--cover-Vib2),.35) 10% , rgb(var(--cover-LVib2),.5) 90%) 40% , rgba(255, 255, 255, 0.67) 60% ); /*selected track animated gradient color 1*/
+        --tracksel2: color-mix(in srgb,color-mix(in srgb, rgb(var(--cover-Vib1),.35) 30% , rgb(var(--cover-LVib2),.5) 70%) 20%, rgba(255, 255, 255, 0.67) 80% ); /*selected track animated gradient color 2*/
+        --trackselshad: rgb(var(--cover-DVib1),.09); /*selected track inset shadow color*/
+        --trackseltxt: color-mix(in srgb, rgb(var(--cover-DVib1),1) 10% , black 90%); /*selected text color*/
+        --tracksborder : rgb(171, 165, 159); /*tracklist divider line color, should be fully opaque*/
+        /*home page top tab thingies (not like the "for you," or "staff picks" buttons, this is for the six big rectangles below those)*/
+        --v1: rgb(179, 168, 147); /*should vaguely match --cover-Vib1*/
+        --v2: rgb(188, 186, 174); /*should vaguely match --cover-Vib2*/
+        /*MAIN BUTTONS ( PLAY / SHUFFLE BUTTONS BUT ALSO OTHER STUFF SOMETIMES)*/
+        --but1: rgb(153, 149, 137);
+        --but2: rgb(165, 151, 130);}
+        /*NOW PLAYING COVER ART HOVER GLARE COLOR (sometimes the saturation needs to be REALLY high don't be afraid to crank that up to like 3000 or whatever)*/
+        ._glare_fdbaeab{filter: sepia(1) hue-rotate(var(--sephue)) saturate(9) brightness(1);}
+/* ===========================----BACKGROUND TEXURES----=============================== */
+
+
+:root{
+    --bg1: 20, 0, 43;
+    --bg2: 14, 0, 58;
+    --bg3: 4, 0, 10;}
+
+/*playlist view background image remover*/
+div._dataContainer_5bb6028::before,div._dataContainer_7feb4a2::before,div._dataContainer_66f4f40::before{background-image: none;}
+/*now playing background*/
+._background_42cea4e{
+  animation: blink 10s infinite, blink2 12s infinite ,blink1 17s infinite, blink12 15s infinite;
+  background-image: 
+  radial-gradient(ellipse at top left, rgb(var(--bg3),0.2), rgb(var(--bg2),0.45),rgba(0, 128, 0, 0) 80%),
+    radial-gradient(circle at 10% 20%, hsla(56, 100%, 90%, var(--star1)) .7px, transparent 0),
+    radial-gradient(circle at 35% 45%, hsla(56, 100%, 90%, var(--star2)) .6px, transparent 0),
+     radial-gradient(circle at 35% 45%, hsla(56, 100%, 90%, var(--star1)) .6px, transparent 0),
+    radial-gradient(circle at 70% 10%, hsla(56, 100%, 90%, var(--star3)) .9px, transparent 0),
+    radial-gradient(circle at 85% 80%, hsla(56, 100%, 90%, var(--star4)) .8px, transparent 0),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, 0.5)),
+radial-gradient(ellipse at top left,color-mix(in srgb,rgb(var(--bg3),0.25) 95%, rgb(var(--bg1),0.25) 5%),rgba(12, 12, 12, 0) 70%),
+radial-gradient(circle at bottom right,rgb(var(--bg3),.2),transparent 53%),
+radial-gradient(circle at bottom left,rgb(var(--bg3),.2),transparent 53%),
+radial-gradient(ellipse at top left, rgb(var(--bg2),.7), rgb(var(--bg2),0.4),rgba(0, 128, 0, 0) 90%),
+linear-gradient(180deg, rgba(var(--bg3),1),  rgba(var(--bg3),1))
+!important;
+  background-size:100% 100%, 450px 240px, 350px 350px, 380px 600px,560px 400px, 410px 320px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+ }
+/*main bg (gradients stack from bottom to top)*/
+._mainContainer_6519c30{
+  animation: blink 10s infinite, blink2 12s infinite ,blink1 17s infinite, blink12 15s infinite;
+  background-image: 
+  radial-gradient(ellipse at top left, rgb(var(--bg3),0.2), rgb(var(--bg2),0.5),rgba(0, 128, 0, 0) 90%),
+    radial-gradient(circle at 10% 20%, hsla(56, 100%, 90%, var(--star1)) .7px, transparent 0),
+    radial-gradient(circle at 35% 45%, hsla(56, 100%, 90%, var(--star2)) .6px, transparent 0),
+    radial-gradient(circle at 70% 10%, hsla(56, 100%, 90%, var(--star3)) .9px, transparent 0),
+    radial-gradient(circle at 85% 80%, hsla(56, 100%, 90%, var(--star4)) .8px, transparent 0),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.367),  rgba(0, 0, 0, 0.347)),
+radial-gradient(ellipse at top left,color-mix(in srgb,rgb(var(--bg3),0.25) 95%, rgb(var(--bg1),0.25) 5%),rgba(12, 12, 12, 0) 70%),
+radial-gradient(circle at bottom right,rgb(var(--bg3),.2),transparent 53%),
+radial-gradient(circle at bottom left,rgb(var(--bg3),.2),transparent 53%),
+radial-gradient(ellipse at top left, rgb(var(--bg2),.7), rgb(var(--bg2),0.4),rgba(0, 128, 0, 0) 90%),
+linear-gradient(180deg, rgba(var(--bg3),1),  rgba(var(--bg3),1))
+!important;
+  background-size:100% 100%, 450px 240px, 350px 350px, 400px 600px, 1200px 230px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+ }
+._fullscreen_236d61b{
+background-color: rgb(var(--cover-Vib1));}
+._main_a5d9f44{ background-color: #ff000000!important;
+background: none!important;
+}
+
+
+/*sidebar album filters (remove hue-rotate to disable colorization effect, but i still recommend adding desaturation or lower brightness for the hover to be noticible since i removed the hover background-color)*/
+[class="_sidebarWrapper_2f256ce"]{._thumbnail_f82abfa img{filter: sepia(1) hue-rotate(var(--sephue)) saturate(.5) brightness(.95); transition: 0ms;}}
+
+/* ==========================================.............................................
+   END OF BUILTINTHEME
+-----------------------------------------------======================================== */
